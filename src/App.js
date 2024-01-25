@@ -8,13 +8,15 @@ import {
 //pages
 import Home from './pages/Home'
 import About from './pages/About'
+import Faq from './pages/help/Faq'
+import Contact from './pages/help/Contact'
+import NotFound from './pages/NotFound'
+import Careers, { careerLoader } from './pages/careers/Careers'
 
 //layouts
 import RootLayout from './layouts/RootLayout'
 import HelpLayout from './layouts/HelpLayout'
-import Faq from './pages/help/Faq'
-import Contact from './pages/help/Contact'
-import NotFound from './pages/NotFound'
+import CareersLayout from './layouts/CareersLayout'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +30,9 @@ const router = createBrowserRouter(
         <Route path="contact" element={<Contact />}>
           Contact us
         </Route>
+      </Route>
+      <Route path="careers" element={<CareersLayout />}>
+        <Route index element={<Careers />} loader={careerLoader} />
       </Route>
 
       <Route path="*" element={<NotFound />}></Route>
