@@ -1,8 +1,11 @@
 import { useLoaderData, useParams } from 'react-router-dom'
 
 export default function CareerDetails() {
+  //get the ID param from the URL
   const { id } = useParams()
   const career = useLoaderData()
+  // console.log(career)
+  // console.log(id)
   return (
     <div className="careers-details">
       <h2>Career Details for {career.title}</h2>
